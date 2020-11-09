@@ -12,3 +12,17 @@ function reverse(str) {
     // }
     // return String(newstr)
 }
+
+
+function palindrome(str) {
+    // turn str into an array
+    let toArray = str.split('')
+    // call reverse method
+    let reversedArray = toArray.reverse()
+    // call join method to turn back into string
+    let reversedString = reversedArray.join("")
+    // see if reversed string is equal to originial string
+    reversedString === str ? isPalindrome = true : isPalindrome = false
+    return isPalindrome 
+    // Or return reversedString === str ?
+}
