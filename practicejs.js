@@ -75,3 +75,25 @@ function reverseInt(n) {
             }
         }
     }    
+
+
+    function chunk(array, size) {
+        //create empty array to store chunks
+        const chunked = []
+        // for each element in the unchunked array 
+        for(let element of array) {
+            const last = chunked[chunked.length-1]
+         // if element does not exist or if length is equal to chunk size     
+            if( !last || last.length === size){
+         // push a new element into chunked with the current element       
+                chunked.push([element]);
+            } else {
+          // else add the current element into chunked       
+                last.push(element);
+            }
+        }
+        // return chunked
+        return chunked
+    
+    
+    }
