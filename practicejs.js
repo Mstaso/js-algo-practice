@@ -26,3 +26,13 @@ function palindrome(str) {
     return isPalindrome 
     // Or return reversedString === str ?
 }
+
+function reverseInt(n) {
+    let reversedNumber = parseInt(n.toString().split('').reverse().join(''))
+    // if (n < 0 ){
+    //     return reversedNumber * -1
+    // } else {
+    //     return reversedNumber
+    // }
+    return reversedNumber * Math.sign(n);
+    }
