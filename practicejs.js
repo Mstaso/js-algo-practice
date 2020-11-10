@@ -140,3 +140,14 @@ function reverseInt(n) {
     function cleanString(str) {
         return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
     }
+
+    // capitalize p1
+    function capitalize(str) {
+        const words = [];
+        for(let word of str.split(' ')){
+            words.push(word)
+            }
+            let newWords = words.map(word => word[0].toUpperCase() + word.slice(1))
+            return newWords.join(' ')
+        }
+       
