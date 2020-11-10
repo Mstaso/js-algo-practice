@@ -127,3 +127,16 @@ function reverseInt(n) {
     
         return charMap;
     }
+
+    // Anagrams part 2
+
+    function anagrams(stringA, stringB) {
+   
+        return cleanString(stringA) === cleanString(stringB) ?  true :  false
+    
+    
+    }
+    
+    function cleanString(str) {
+        return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
+    }
