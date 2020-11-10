@@ -145,9 +145,8 @@ function reverseInt(n) {
     function capitalize(str) {
         const words = [];
         for(let word of str.split(' ')){
-            words.push(word)
+            words.push(word[0].toUpperCase() + word.slice(1));
             }
-            let newWords = words.map(word => word[0].toUpperCase() + word.slice(1))
-            return newWords.join(' ')
+            return words.join(' ')
         }
        
