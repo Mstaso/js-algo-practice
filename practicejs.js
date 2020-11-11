@@ -165,3 +165,22 @@ function reverseInt(n) {
         return result
           } 
        
+
+        //   Steps
+        function steps(n) {
+
+            for(let row = 0;row < n; row++){
+                let stair = '';
+               
+                for(let column = 0; column < n; column++){
+                    if(column <= row){
+                        stair += "#";
+                        // console.log(column, row, "if statement", stair)
+                    } else {
+                        stair += ' ';
+                    }
+                }
+                console.log(stair)
+            }
+        
+        }
