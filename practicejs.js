@@ -238,3 +238,9 @@ function reverseInt(n) {
             return count;
          }
          
+        //  Vowels part 2
+        function vowels(str) {
+            const matches = str.match(/[aeiou]/gi);
+        
+            return matches ? matches.length : 0
+         }
