@@ -222,3 +222,19 @@ function reverseInt(n) {
                 add = '';
             }
         } 
+        
+        // Vowels
+        function vowels(str) {
+
+            let count = 0;
+            let checker = "aeiou"
+         
+            for(let char of str.toLowerCase()){
+                if (checker.includes(char)){
+                    count ++
+                }
+            }
+         
+            return count;
+         }
+         
