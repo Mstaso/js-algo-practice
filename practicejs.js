@@ -293,4 +293,15 @@ function reverseInt(n) {
                 return str === reversedString ? true : false
             
             }
+
+            // reverse int
+            function reverseInt(n) {
+                let reversedNumber = parseInt(n.toString().split('').reverse().join(''))
+                // if (n < 0 ){
+                //     return reversedNumber * -1
+                // } else {
+                //     return reversedNumber
+                // }
+                return reversedNumber * Math.sign(n);
+                }
             
