@@ -276,4 +276,21 @@ function reverseInt(n) {
                 return maxChar
             
             }
+
+            // palindrome again
+            function palindrome(str) {
+ 
+                // turn string to an array
+            
+                // reverse array
+            
+                // turn back into a string by JOINING
+            
+                let reversedString = str.split('').reverse().join('')
+                
+                //use terniary statement to compare reversed string to OG
+                
+                return str === reversedString ? true : false
+            
+            }
             
