@@ -359,6 +359,7 @@ function reverseInt(n) {
                     }
             
                     // fib
+                    // for every increae in n, we have to calculate one additional number.  LINEAR
                     function fib(n) {
                         //create array
                         const result = [0, 1];
@@ -372,6 +373,16 @@ function reverseInt(n) {
                             return result[n];
                         }
 
+
+                        // EXPONENTIAL
+                        //for every increase in n were going to get an exponential amount of function calls
+                        // if interviewer asks if we can improve the runtime.  
+
+                        // memoization
+                        // store the arguments of each function call along with the result.  
+                        // If the function is called again with the sam arguments, return the precomputed result, 
+                        // rather than running the function again.  
+
                         function fib(n) {
                             if (n < 2) {
                                 return n;
@@ -380,3 +391,30 @@ function reverseInt(n) {
                             return fib(n - 1) + fib(n - 2);
                         
                         }
+
+
+                        // fib with memoize
+                        function memoize(fn) {
+                            const cache = {};
+                            return function(...args) {
+                                if (cache[args]){
+                                    return cache[args];
+                                }
+                        
+                                const result = fn.apply(this, args); 
+                                cache[args] = result;
+                        
+                                return result;
+                            };
+                        }
+                        
+                        function slowFib(n) {
+                            if (n < 2) {
+                                return n;
+                            }
+                        
+                            return fib(n - 1) + fib(n - 2);
+                        
+                        }
+                        
+                        const fib = memoize(slowFib);
