@@ -358,3 +358,16 @@ function reverseInt(n) {
                     
                     }
             
+                    // fib
+                    function fib(n) {
+                        //create array
+                        const result = [0, 1];
+                        
+                        for(let i = 2; i <= n; i++){
+                            const a = result[result.length - 1];
+                            const b = result[i - 2];
+                        
+                            result.push(a + b);
+                            }
+                            return result[n];
+                        }
