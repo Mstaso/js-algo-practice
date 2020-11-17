@@ -418,3 +418,38 @@ function reverseInt(n) {
                         }
                         
                         const fib = memoize(slowFib);
+
+                        // data structures queue
+                        class Queue {
+
+                            constructor() {
+                                this.data = [];
+                            }
+                        
+                            add(record) {
+                                this.data.unshift(record)
+                            }
+                        
+                            remove(record) {
+                                return this.data.pop();
+                            }
+                        }
+
+                        // Queue with peak
+                        class Queue {
+                            constructor() {
+                              this.data = [];
+                            }
+                          
+                            add(record) {
+                              this.data.unshift(record);
+                            }
+                          
+                            remove() {
+                              return this.data.pop();
+                            }
+                          
+                            peek() {
+                             return this.data[this.data.length -1];
+                            }
+                          }
