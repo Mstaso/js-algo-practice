@@ -685,6 +685,24 @@ class LinkedList {
 
     }
 
+    forEach(fn) {
+
+        let node = this.head;
+
+        while(node){
+            fn(node);
+            node = node.next
+        }
+    }
+
+
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 
 
 }
