@@ -620,6 +620,70 @@ class LinkedList {
     removeFirst() {
         this.head = this.head.next
     }
+    getAt(index){
+
+        let counter = 0;
+        let node = this.head;
+
+        while(node){
+            if (counter === index){
+                return node;
+            }
+                counter ++;
+                node = node.next;
+            
+        }
+        return null;
+
+    }
+
+    removeAt(index){
+        if(!this.head){
+            return null;
+        }
+
+        if(index === 0){
+            this.head = this.head.next;
+            return;
+        }
+
+        const previous = this.getAt(index - 1);
+
+        if(!previous || !previous.next){
+            return;
+        }
+
+        previous.next = previous.next.next
+
+
+
+
+        // let size = this.size()
+        // console.log(size)
+        // if(size < index){
+        //     return null;
+        // }
+        // let nodeToRemove = getAt(index)
+        // nodeToRemove = null;
+        // return ;
+    }
+
+    insertAt(data, index){
+        if(!this.head) {
+            this.head = new Node(data);
+            return;
+        }
+
+        if(index === 0){
+            this.head = new Node(data, this.head);
+            return;
+        }
+
+        const previous = this.getAt(index - 1) || this.getLast();
+        const node = new Node(data, previous.next);
+        previous.next = node;
+
+    }
 
 
 
