@@ -768,22 +768,42 @@ class Node {
         }
     }
 
-    function levelWidth(root) {
-        // width = breadth first reversal with tree
-        const arr = [root, 's'];
-        const counters = [0];
-    
-        while (arr.length > 1) {
-            const node = arr.shift();
-            if (node === 's') {
-                counters.push(0);
-                arr.push('s');
-            } else {
-                arr.push(...node.children);
-                counters[counters.length-1]++;
-            }
+}
+
+function levelWidth(root) {
+    // width = breadth first reversal with tree
+    const arr = [root, 's'];
+    const counters = [0];
+
+    while (arr.length > 1) {
+        const node = arr.shift();
+        if (node === 's') {
+            counters.push(0);
+            arr.push('s');
+        } else {
+            arr.push(...node.children);
+            counters[counters.length-1]++;
         }
-        return counters;
+    }
+    return counters;
+}
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+
+    insert(data) {
+        if (data < this.data && this.left) {
+            this.left.insert(data);
+        } else if (data < this.data) {
+            this.left = new Node(data);
+        } else if (data > this.data && this.right){
+            this.right.insert(data);
+        } else if (data > this.data){
+            this.right = new Node(data);
+        }
     }
 
 }
