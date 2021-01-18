@@ -105,3 +105,62 @@ function charCount(str) {
 
 
 // Frequency Counter Pattern
+// Write a function called same, which accepts two arrays.  The function should return true if every value in the array has it's corresponding value squared in the second array.  The frequency of values must be the same.  
+
+function anagram(str1, str2){
+    // check if their length is the same
+    if(str1.length !== str2.length){
+        return false;
+    }
+    if(charMap(str1) === charMap(str2)){
+        return true;
+    } else {
+        return false;
+    }
+// create helper functions to break strings into character maps
+
+// compare results of each character map
+
+}
+
+function charMap(str){
+    // create object to return at the end
+    let result = {};
+    // loop over string
+    for(let char of str){
+        // see if that character already exists in the object
+        if (result[char]){
+            // if it does, increment by one
+            result[char]++
+        } else {
+            // else set it equal to one
+            result[char] = 1
+        }
+    }
+        // return the object
+    return result
+}
+
+
+function validAnagram(first, second){
+    if (first.length !== second.length){
+        return false;
+    }
+
+    const lookup = {};
+
+    for(let char of first){
+        let letter = first[char]
+        lookup[letter] ? lookup[letter] += 1 : lookup[letter]=1
+    }
+    for(let char of second){
+        let letter = second[char]
+        if (!lookup[letter]) {
+            return false;
+        } else {
+            lookup[letter] -= 1;
+        }
+    }
+
+    return true;
+}
