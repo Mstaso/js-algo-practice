@@ -185,4 +185,27 @@ function sumZero(arr){
 
 }
 
-// Implement a function called countUnique 
+// Implement a function called countUniqueValues, which accepts a sort array, and counts the unique values in the array.  There can be negative numbers in the array, but it will always be sorted. 
+
+
+
+
+function countUniqueValues(arr){
+    // create two variables to be able to compare the array at different points
+    let slow = 0;
+
+    for (let fast = 1; fast < arr.length; fast++){
+        if(arr[slow] !== arr[fast]){
+            fast++;
+            arr[slow] = arr[j]
+        }
+    }
+ 
+    return i + 1;
+    // iterate over the array with both counters
+
+    // if slow is not equal too fast, replace the value of slow with the value of fast
+
+    // return array
+
+}
