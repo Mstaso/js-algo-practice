@@ -164,3 +164,25 @@ function validAnagram(first, second){
 
     return true;
 }
+
+
+// Write a function callled sumzero which accepts a sorted aray of integers.  The function should find the first pair where the sum is 0.  
+
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length -1;
+
+    while(left < right){
+        let sum = arr[lef] + arr[right];
+        if(sum === 0){
+            return [arr[left], arr[right]];
+        } else if (sum > 0){
+            right--;
+        } else {
+            left++;
+        }
+    }
+
+}
+
+// Implement a function called countUnique 
