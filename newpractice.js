@@ -192,16 +192,17 @@ function sumZero(arr){
 
 function countUniqueValues(arr){
     // create two variables to be able to compare the array at different points
-    let slow = 0;
+    let i = 0;
 
-    for (let fast = 1; fast < arr.length; fast++){
-        if(arr[slow] !== arr[fast]){
-            fast++;
-            arr[slow] = arr[j]
+    for (let j = 1; j < arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++;
+            arr[i] = arr[j]
+           
         }
     }
  
-    return i + 1;
+    return slow + 1;
     // iterate over the array with both counters
 
     // if slow is not equal too fast, replace the value of slow with the value of fast
