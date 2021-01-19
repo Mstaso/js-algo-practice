@@ -261,3 +261,38 @@ function countUniqueValues(arr){
 
 
 // Write a function called maxSubarraySum which accepts an array of integers and a number called n.  The function should calculate the maximum sum of n consecutive elements in the array.
+
+
+
+
+
+// Average piar
+
+function averagePair(arr, targetAverage) {
+// create start and end points
+let start = 0;
+let end = arr.length - 1;
+while(start < end){
+   let avg = (arr[start] + arr[end])/2;
+    if(avg === targetAverage){
+        return true;
+    } else if(avg < targetAverage){
+        start ++;
+    }
+}
+return false;
+
+}
+
+function isSubsequence(str1, str2) {
+    // create two pointers
+    let i = 0;
+    let j = 0;
+    while(j < str2.length){
+        if (str2[j] === str1[i]) i++;
+        if (i === str1.length) return true;
+        j++;
+    }
+    
+    return false;
+}
