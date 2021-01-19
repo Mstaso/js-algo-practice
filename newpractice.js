@@ -166,6 +166,43 @@ function validAnagram(first, second){
 }
 
 
+function sameFrequency(int1, int2) {
+    if (int1.toString().length !== int2.toString().length){
+        return false;
+    }
+    // create an object to store integers numbers and for comparison
+    let result = {};
+    // iterate through integer one and store it's numbers within result
+    for(let num of int1.toString()){
+        console.log(num)
+        // if there's already a number at that location, increase by 1
+        if(result[num]){
+            result[num]++;
+        } else {
+            // if there number is not stored, make it equal to one
+            result[num] = 1;
+        }
+    }
+
+    // use for loop to iterate through second integer
+    for(let num of int2.toString()){
+        // compare each num of int2 with the previously stored result
+        if(result[num]){
+            result[num] - 1
+        } else {
+            return false;
+        }
+    }
+
+    // return true, as their have been no falacies found.  
+    return true;
+}
+
+
+
+
+
+
 // Write a function callled sumzero which accepts a sorted aray of integers.  The function should find the first pair where the sum is 0.  
 
 function sumZero(arr){
@@ -210,3 +247,6 @@ function countUniqueValues(arr){
     // return array
 
 }
+
+
+// Write a function called maxSubarraySum which accepts an array of integers and a number called n.  The function should calculate the maximum sum of n consecutive elements in the array.
