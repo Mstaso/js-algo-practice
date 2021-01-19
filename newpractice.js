@@ -262,6 +262,43 @@ function countUniqueValues(arr){
 
 // Write a function called maxSubarraySum which accepts an array of integers and a number called n.  The function should calculate the maximum sum of n consecutive elements in the array.
 
+function maxSubarraySum(arr, num) {
+    // set variables for window
+    let maxSum = 0;
+
+    // check edge case
+    // if 9 is less 3 return null
+    if (arr.length < num){
+        return null;
+    }
+
+    // iterate through, while the iteration count is less than 3 keep iterating
+    for(let i = 0; i < num; i++){
+        maxSum += arr[i];
+        // add each number to the maxSum variable
+    }
+    // maxsum is currently 17
+    console.log(maxSum);
+
+    // i is equal to 3, while i is less than 9, continue to iterate
+    let tempsum = maxSum;
+    for(let i = num; i < arr.length; i++){
+        // tempsum is window and will always be sum of 3 numbers
+        // tempsum equals the current tempsum minus the previous number in the array plus the next number in the array
+        tempSum = tempSum - arr[i-num] + arr[i]
+
+        // if at anypoint, tempsum becomes greater than maxsum, set maxsum equal to tempsum
+        if (tempSum > maxSum) {
+            maxSum = tempSum
+        }
+    
+    }
+  
+
+    return maxSum;
+}
+
+
 
 
 
@@ -296,3 +333,5 @@ function isSubsequence(str1, str2) {
     
     return false;
 }
+
+
