@@ -281,7 +281,7 @@ function maxSubarraySum(arr, num) {
     console.log(maxSum);
 
     // i is equal to 3, while i is less than 9, continue to iterate
-    let tempsum = maxSum;
+    let tempSum = maxSum;
     for(let i = num; i < arr.length; i++){
         // tempsum is window and will always be sum of 3 numbers
         // tempsum equals the current tempsum minus the previous number in the array plus the next number in the array
@@ -298,7 +298,30 @@ function maxSubarraySum(arr, num) {
     return maxSum;
 }
 
+function minSubArrayLen(num, sum){
+    let total = 0;
+    let start = 0;
+    let end = 0;
+    let minLen = Infinity;
 
+    while(start < nums.length) {
+        // if current window doesn't add up to the given sum the
+        // move the window to right
+
+        if(total < sum && end < nums.length){
+            total += nums[end]; 
+            end++;
+        }
+
+        else if(total >= sum){
+            minLen = Math.min(minLen, end-start);
+            total -= nums[start];
+            start++;
+        }
+    }
+
+
+}
 
 
 
@@ -334,4 +357,100 @@ function isSubsequence(str1, str2) {
     return false;
 }
 
+
+
+
+
+function sameFrequency(int1, int2) {
+
+    // handle edge case if the ints are not the same length
+
+    if(int1.toString().length !== int2.toString().length){
+        return false;
+    }
+
+    // create a variable to store digits
+    let digits = {};
+
+    // create for loop to store the digits of first integer, turn integer to string else its not iterable
+
+    for(let num of int1.toString()){
+        // if the num is already stored in digits, increase its count
+        if(digits[num]){
+            digits[num]++;
+        } else {
+            // if the num is NOT stored in digits, set its count to 1
+            digits[num] = 1;
+        }
+    }
+
+    // iterate through second in2, and if the value exists in digits variable, decrease it's count by 1
+
+    for(let num of int2.toString()){
+        if(digits[num]){
+            digits[num] - 1;
+        } else {
+            return false;
+        }
+    }
+
+    // if we make it through the second for loop, all digits have been account for and the two integers must have the same frequency
+
+
+    return true;
+
+
+}
+
+
+function areThereDuplicates() {
+
+// create object to store arguments
+let collection = {};
+
+for(let val of arguments){
+    if (collection[val]){
+        return true;
+    } else {
+        collection[val] = 1;
+    }
+}
+
+return false;
+}
+
+// function areThereDuplicates() {
+//     let collection = {}
+//     for(let val in arguments){
+//       collection[arguments[val]] = (collection[arguments[val]] || 0) + 1
+//     }
+//     console.log(collection)
+//     for(let key in collection){
+//       if(collection[key] > 1) return true
+//     }
+//     return false;
+//   }
+
+
+function areThereDuplicates(...args) {
+
+args.sort((a,b) => a > b);
+let start = 0;
+let next = 1;
+
+while(next < args.length){
+    if(args[start] === args[next]){
+        return true;
+    }
+    start++
+    next++
+}
+
+return false;
+}
+  
+
+function averagePair() {
+    
+}
 
