@@ -20,3 +20,15 @@ print (bmi)
 
 # comment check 
 
+def function1():
+    print("here we are")
+
+print("this is out of the function")    
+
+function1()
+
+def function2(x, y):
+    print(x+y)
+
+function2(1, 77)
+
