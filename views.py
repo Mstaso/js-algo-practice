@@ -32,3 +32,13 @@ def function2(x, y):
 
 function2(1, 77)
 
+a = [1,2,3,4,5,6]
+
+a.append(1)
+
+for element in a:
+    print(element)
+
+#append, adds an item at the end of list
+#pop, removes the last item from list
+
