@@ -518,3 +518,8 @@ function recursiveRange(x){
     if (n <= 2) return 1;
     return fib(n-1) + fib(n-2);
 }
+
+function reverse(str){
+	if(str.length <= 1) return str;
+	return reverse(str.slice(1)) + str[0];
+}
