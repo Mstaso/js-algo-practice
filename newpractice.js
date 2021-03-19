@@ -538,3 +538,14 @@ function someRecursive(array, callback) {
     if (callback(array[0])) return true;
     return someRecursive(array.slice(1),callback);
 }
+
+function flatten(oldArr){
+  const newArr = [];
+  for(let i = 0; i < oldArr.length; i++){
+      if (Array.isArray([oldArr[i]])){
+          newArr = newArr.concat(flatten(oldArr[i]))
+      } else {
+          newArr.push(oldArr[i])
+      }
+  }
+}
