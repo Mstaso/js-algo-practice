@@ -39,6 +39,7 @@ print(s.replace('world', 'everyone'))
 
 # Count
 sub = 'h'
+# counts the number of H's within the string
 print(s.count(sub))
 
 # Starts with
@@ -47,7 +48,7 @@ print(s.startswith('hello'))
 # Ends with
 print(s.endswith('d'))
 
-# Split into a list
+# Split into a list, which is similar to an array
 print(s.split())
 
 # Find position
