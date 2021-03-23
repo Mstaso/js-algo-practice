@@ -1,52 +1,46 @@
-
 # A Dictionary is a collection which is unordered, changeable and indexed. No duplicate members.
-# Read more about dictionaries at https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
-
-# Create Dict
-
+# Create dict
 person = {
     'first_name': 'John',
     'last_name': 'Doe',
     'age': 30
 }
 
+# Use constructor
+# person2 = dict(first_name='Sara', last_name='Williams')
+
+# Get value
 print(person['first_name'])
 print(person.get('last_name'))
 
-# add key/value
+# Add key/value
 person['phone'] = '555-555-5555'
 
-#get dict keys
+# Get dict keys
 print(person.keys())
 
-# print(person)
+# Get dict items
+print(person.items())
 
-# copy dict
+# Copy dict
 person2 = person.copy()
-person2['city'] = 'boston'
+person2['city'] = 'Boston'
 
-
-
-#Remove item
+# Remove item
 del(person['age'])
 person.pop('phone')
 
-
-#clear
+# Clear
 person.clear()
 
-
-# get length
+# Get length
 print(len(person2))
 
-print(person2)
-
-# list of dict
-
+# List of dict
 people = [
     {'name': 'Martha', 'age': 30},
-    {'name': 'Sam', 'age': 25}
+    {'name': 'Kevin', 'age': 25}
 ]
 
 print(people[1]['name'])
