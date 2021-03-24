@@ -14,6 +14,20 @@ function reverse(str) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function palindrome(str) {
     // turn str into an array
     let toArray = str.split('')
