@@ -30,5 +30,46 @@
    return reversed === str ? true : false;
 }
 
-reverse("apple");
+function maxChar(str) {
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+
+    for(let char of str){
+        if(charMap[char]){
+            charMap[char]++;
+        } else {
+            charMap[char] = 1;
+        }
+    }
+
+    for(let char in charMap){
+        if(charMap[char] > max){
+            max = charMap[char]
+            maxChar = char;
+        }
+    }
+    return maxChar;
+}
+
+
+function chunk(array, size) {
+// create an array to store all chunks called chunked
+const chunked = [];
+// create array to store chunks
+// iterate through original array 
+for(let element of array){
+    const last = chunked[chunked.length -1]
+    if(!last || last.length === size){
+        chunked.push([element]);
+    } else {
+        last.push(element);
+    }
+}
+
+return chunked;
+}
+
+
+chunk([1,2,3,4], 2);
 
