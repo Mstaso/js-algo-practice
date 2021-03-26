@@ -60,16 +60,55 @@ const chunked = [];
 // iterate through original array 
 for(let element of array){
     const last = chunked[chunked.length -1]
+    console.log('last', last)
+    console.log('chunked', chunked)
     if(!last || last.length === size){
         chunked.push([element]);
+        // console.log("in if statement", chunked, last)
     } else {
         last.push(element);
+        // console.log(last)
     }
 }
 
-return chunked;
+console.log(chunked);
+}
+
+function anagrams(stringA, stringB) {
+// use regular expressions to remove anything thats not a real word
+const newA = stringA.replace(/[^\w]/g, "").toLowerCase()
+const newB = stringB.replace(/[^\w]/g, "").toLowerCase()
+// compare lengths 
+if (newA.length !== newB.length){
+    return false;
+} 
+    // build character maps
+    const mapA = buildCharMap(newA);
+    const mapB = buildCharMap(newB);
+    console.log(mapA, mapB)
+    // iterate through charmaps
+    for(let element in mapA){
+        if(!mapB[element] || mapB[element] !== mapA[element]){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function buildCharMap(str) {
+    const charMap = {};
+    for(let char of str){
+        if(!charMap[char]){
+            charMap[char] = 1;
+        } else {
+            charMap[char] ++;
+        }
+    }
+
+    return charMap;
 }
 
 
-chunk([1,2,3,4], 2);
+anagrams('RAIL! SAFETY!', 'fairy tales');
 
