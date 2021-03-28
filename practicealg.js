@@ -117,5 +117,28 @@ function cleanString(str) {
    return str.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
 }
 
-anagrams('RAIL! SAFETY!', 'fairy tales');
 
+// function capitalize(str) {
+
+// const newStr = str   
+// for(let i = 0; i < str.length -1; i++ ) {
+//    if(str[i] === " "){
+//     newStr[i+1].toUpperCase()
+//    } 
+   
+// }
+// console.log(newStr)
+// }
+
+function capitalize(str) {
+const words = [];
+
+for(let word of str.split(' ')){
+    words.push(word[0].toUpperCase() + word.slice(1))
+}
+
+return words.join(' ')
+
+}
+
+capitalize("hello there")
