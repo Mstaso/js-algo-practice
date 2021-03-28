@@ -157,4 +157,21 @@ return result
 // console.log(result);
 }
 
-capitalize("hello there")
+
+function steps(num) {
+
+// iterate through number with for loop
+for(let row = 0; row < num; row++){
+    let stair = ''
+   for(let column = 0; column < num; column++){
+       if(column <= row){
+           stair += "#"
+       } else {
+           stair += " "
+       }
+   }
+   console.log(stair)
+}
+}
+
+steps(4)
