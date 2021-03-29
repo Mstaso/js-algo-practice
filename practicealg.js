@@ -158,20 +158,78 @@ return result
 }
 
 
-function steps(num) {
+// function steps(num) {
 
-// iterate through number with for loop
-for(let row = 0; row < num; row++){
-    let stair = ''
-   for(let column = 0; column < num; column++){
-       if(column <= row){
-           stair += "#"
-       } else {
-           stair += " "
-       }
-   }
-   console.log(stair)
-}
+// // iterate through number with for loop
+// for(let row = 0; row < num; row++){
+//     let stair = ''
+//    for(let column = 0; column < num; column++){
+//        if(column <= row){
+//            stair += "#"
+//        } else {
+//            stair += " "
+//        }
+//    }
+//    console.log(stair)
+// }
+// }
+
+function steps(num, row = 0, stair = '') {
+    if (num === row){
+        return;
+    }
+
+    if (num === stair.length) {
+        console.log(stair)
+        return steps(num, row + 1);
+    }
+
+    if (stair.length <= row) {
+        stair += '#'
+    } else {
+        stair += ' '
+    }
+
+    steps(num, row, stair)
 }
 
-steps(4)
+function pyramid(n) {
+    for(let row = 0; row < n; row++) {
+        let level = '';
+    for(let column = 0; column < 2 * n - 1; column++) {
+
+    }    
+    }
+}
+
+// steps(4)
+
+
+
+
+    var twoSum = function(nums, target) {
+
+        // use nested for loop to sum all examples of numbers 
+        for(let i = 0; i < nums.length - 1; i++) {
+            for(let j = 0; j < nums.length -1; j++) {
+                if(nums[i] + nums[j] === target){
+                    return nums[i] + nums[j]
+                }
+            }
+        }
+        };    
+
+function vowels(str) {
+    let count = 0;
+
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+    for(let char of str) {
+        if (vowels.includes(char)){
+            count ++;
+        }
+    }
+
+    return count
+}
+
+vowels("hello")
