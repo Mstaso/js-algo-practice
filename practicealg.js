@@ -338,4 +338,16 @@ var interpret = function(command) {
         return goalString;
     };
 
-
+    var createTargetArray = function(nums, index) {
+        //     create target array
+            const target = [];
+        //     iterate through index
+            for (let i of nums) {
+            target.splice(index[i], 0, nums[i])
+                console.log(target)
+                }
+            
+            
+        // return target    
+            return target;
+        };
