@@ -245,7 +245,7 @@ function reverseInt(n) {
          
             for(let char of str.toLowerCase()){
                 if (checker.includes(char)){
-                    count ++
+                    count ++;
                 }
             }
          

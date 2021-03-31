@@ -232,9 +232,110 @@ function pyramid(n) {
 //     return count
 // }
 
-function vowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-  return matches ? matches.length : 0;
+// function vowels(str) {
+//   const matches = str.match(/[aeiou]/gi);
+//   return matches ? matches.length : 0;
+// }
+
+// vowels("hello")
+
+// function fib(n) {
+//     const result = [0, 1];
+
+//     for(let i = 2; i <= n; i++) {
+//         const a = result[i - 1];
+//         const b = result[i - 2];
+
+//         result.push(a + b);
+//     }
+
+//     result[n];
+// }
+
+
+// function fib(n) {
+//     // create result array with first two numbers of sequence
+//     const result = [0, 1];
+    
+//     for(let i = 2; i <= n; i++) {
+//         const a = result[i - 1];
+//         const b = result[i - 2];
+//         result.push(a, b);
+//     }
+
+//     return result[n];
+// }
+
+
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        if(cache[args]){
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args)
+        cache[args] = result;
+
+        return result;
+    }
+}
+function slowFib(n) {
+
+    if(n < 2){
+        return n;
+    }
+
+    return fib(n - 1) + fib(n - 2);
+
 }
 
-vowels("hello")
+var detectCapitalUse = function(word) {
+    let capWord = word.toUpperCase();
+    let nonCapWord = word.toLowerCase();
+    
+    if(capWord == word || nonCapWord == word)
+        return true;
+    
+    let capCount = 0;
+    
+    for(let i = 0; i < word.length ; i++){
+        if(word[i] == word[i].toUpperCase())
+            capCount++;
+        
+        if(capCount > 1)
+            return false;
+    }
+    
+    if(word[0] != word[0].toUpperCase())
+        return false;
+    
+    return true;
+};
+
+
+// detectCapitalUse("JohN")
+
+var interpret = function(command) {
+    //     create new string to be able to store the correct interpretation
+        let goalString = '';
+        
+    //     iterate through command 
+        for (let i = 0; i < command.length; i++) {
+            if(command[i] === "(" && command[i+1] === ")") {
+                goalString += "o";
+            }
+            if(command[i] === "a") {
+                goalString += "al"
+            }
+            if(command[i] === 'G')
+                goalString += 'G'
+        }
+    //         if statement 
+    //     add into string variable if it matches command
+        
+    //     return string variable
+        return goalString;
+    };
+
+
