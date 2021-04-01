@@ -392,3 +392,24 @@ var interpret = function(command) {
                 
                 return sum
             };
+
+
+            var subtractProductAndSum = function(n) {
+
+                let sum = 0;
+            //     7, 7, 12
+                let product = 0;
+            //  7, 0
+                let numString = n.toString()
+                for (let i = 0; i < numString.length; i++) {
+                   let int = parseInt(numString[i]);
+                   sum += int;
+                    if(product === 0 && i === 0){
+                        product = int;
+                    } else {
+                        product = product * int;    
+                    } 
+                }
+            
+                return product - sum;
+            };
