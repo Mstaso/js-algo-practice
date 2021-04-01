@@ -351,3 +351,21 @@ var interpret = function(command) {
         // return target    
             return target;
         };
+        var balancedStringSplit = function(s) {
+
+            let counter = 0;
+            let tempR = [];
+            let tempL = [];
+            
+                for(let i = 0; i < s.length; i++) {
+                    s[i] === 'R' ? tempR.push('R') : tempL.push('L')
+            
+                    if (tempR.length === tempL.length && i % 2 !== 0) {
+                        counter ++;
+                    }
+            
+                }
+            
+                return counter;
+                
+            };
