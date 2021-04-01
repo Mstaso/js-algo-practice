@@ -369,3 +369,26 @@ var interpret = function(command) {
                 return counter;
                 
             };
+
+
+            var rangeSumBST = function(root, low, high) {
+                const stack = [root]
+                let sum = 0
+                
+                while(stack.length) {
+                    const node = stack.pop()
+                    const value = node.val
+                    
+                    if(value >= low && value <= high) {
+                        sum += value
+                    }
+                    if(node.left) {
+                        stack.push(node.left)
+                    }
+                    if(node.right) {
+                        stack.push(node.right)
+                    }
+                }
+                
+                return sum
+            };
