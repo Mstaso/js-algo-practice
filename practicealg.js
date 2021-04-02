@@ -434,3 +434,27 @@ class Node {
         }
     }
 }            
+
+var kidsWithCandies = function(candies, extraCandies) {
+    //     create max candies without extra variable
+        let target = 0;
+    //     loop thru
+        for (let i = 0; i < candies.length; i++) {
+    //         if candies[i] is greater than target, set target to that value
+            if(candies[i] > target) {
+                target = candies[i]
+            }
+        }
+    //     create result variable 
+        let result = [];
+    //     loop thru candies again, and if candies[i] + extracandies is greater than target, push true into result, else push false
+        for(let i = 0; i < candies.length; i++) {
+            if(candies[i] + extraCandies >= target) {
+                result.push(true);
+            } else {
+                result.push(false);
+            }
+        }
+        
+        return result;
+    };
