@@ -512,3 +512,21 @@ var kidsWithCandies = function(candies, extraCandies) {
         //     return result and use join to turn back into string
             return result.join('');
         };    
+
+        var decompressRLElist = function(nums) {
+            //     create result array to store frequency and values
+                const result = [];
+            //     loop through nums
+                for(let i = 0; i < nums.length; i++) {
+                    //     if i % 2 == 0 
+                    if(i % 2 === 0) {
+                        for(let j = 0; j < nums[i]; j++) {
+                            result.push(nums[i+1])
+                        }
+                    }
+                }
+            
+            //     push x copies of nums[i] into result, where x is equal to nums[i+1] 
+            //     return result
+            return result;
+            };
