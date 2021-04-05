@@ -499,3 +499,16 @@ var kidsWithCandies = function(candies, extraCandies) {
           
           return counter;
       };    
+
+      var restoreString = function(s, indices) {
+        //    create an array to store result, needs to be same length as s
+            const result = s.split('');
+        // loop through s
+            for(let i = 0; i < s.length; i++) {
+        //         insert the current character at indices[i] using splice and replace the chracter in the current position
+                result.splice(indices[i], 1, s[i]);
+            }
+            
+        //     return result and use join to turn back into string
+            return result.join('');
+        };    
