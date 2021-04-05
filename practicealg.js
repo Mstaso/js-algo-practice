@@ -594,3 +594,23 @@ var kidsWithCandies = function(candies, extraCandies) {
                             return sum;
                             
                         };
+
+                        var numberOfMatches = function(n) {
+                            let matches = 0;
+                            let teams = n;
+                                while(teams > 1) {
+                            
+                                    if(teams % 2 !== 0) {
+                                        matches += (teams - 1) / 2;
+                                        teams = (teams + 1) / 2;
+                                    } else {
+                                      matches += teams / 2;
+                                      teams = teams / 2;  
+                                    }
+                                    
+                                    
+                                    
+                                }
+                                
+                                return matches;
+                            };                        
