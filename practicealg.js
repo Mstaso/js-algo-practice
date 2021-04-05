@@ -571,3 +571,26 @@ var kidsWithCandies = function(candies, extraCandies) {
                     
                         return counter;
                     };
+
+                    var sumOddLengthSubarrays = function(arr) {
+                        //     create result variable to hold sum
+                            let sum = 0;
+                            
+                        for(let i = 0; i < arr.length; i++)  {
+                            let odd = [];
+                            odd.push(arr[i]);
+                            sum += arr[i];
+                            for (let j = i + 1; j < arr.length; j++) {
+                                odd.push(arr[j]);
+                                if(odd.length % 2 !== 0) {
+                                    odd.forEach((num) => {
+                                        sum += num;
+                                    })
+                                }
+                            };
+                             
+                        };
+                            
+                            return sum;
+                            
+                        };
