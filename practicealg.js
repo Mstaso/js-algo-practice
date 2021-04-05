@@ -530,3 +530,26 @@ var kidsWithCandies = function(candies, extraCandies) {
             //     return result
             return result;
             };
+            class OrderedStream {
+                //     contructor that takes in n
+                    constructor(n) {
+                    this.pointer = 1
+                    // this will create an array of length (n) and set all values to 'undefined'
+                    this.list = Array.from({length: n}) 
+                    };
+                    
+                    insert(idKey, Value) {
+                        this.list[idKey] = Value;
+                        const output = [];
+                        while (true) {
+                            if(this.list[this.pointer]){
+                              output.push(this.list[this.pointer])
+                              this.pointer++
+                            } else {
+                              break
+                                }    
+                        };
+                        return output;    
+                    };
+                    
+                }           
