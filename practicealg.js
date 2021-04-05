@@ -489,3 +489,13 @@ var kidsWithCandies = function(candies, extraCandies) {
         
         return result;
     };       
+
+    var numberOfSteps = function(num) {
+        let counter = 0;
+          while(num > 0) {
+              num % 2 === 0 ? num /= 2 : num --;
+              counter ++;
+          }
+          
+          return counter;
+      };    
