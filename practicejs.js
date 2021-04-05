@@ -939,5 +939,36 @@ var rangeSumBST = function(root, low, high) {
     
     };
 
+    var maxDepth = function(s) {
+        //     create a counter variable
+            let counter = 0;
+        //     create a maxDepth variable
+            let md = 0;
+        
+        // loop thru s
+            for(let char of s) {
+                
+                if(char === '(') {
+                  counter ++;  
+                };
+                if(char === ')') {
+                    counter --;
+                }
+                if (counter > md) {
+                    md = counter;
+                };
+            };
+        //     if char is === ( 
+        //         increase counter by 1
+        //      if char is === )
+        //          decrease counter by 1
+        //      counter is > than maxDepth,
+        //          set maxdepth to counter
+            
+            
+        //     return maxdepth
+            return md;
+        };    
+
 
 
