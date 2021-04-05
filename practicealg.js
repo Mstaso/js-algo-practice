@@ -553,3 +553,21 @@ var kidsWithCandies = function(candies, extraCandies) {
                     };
                     
                 }           
+
+                var countConsistentStrings = function(allowed, words) {
+                    //     create counter variable
+                        let counter = 0;
+                    //     forEach word in words
+                        words.forEach((word) => {
+                            for(let char of word) {
+                              if(!allowed.includes(char)) {
+                                return;   
+                              };  
+                                
+                            };
+                            
+                            counter++;
+                        });
+                    
+                        return counter;
+                    };
