@@ -917,4 +917,27 @@ function merge(left, right) {
 }
 
 
+var rangeSumBST = function(root, low, high) {
+    // create result variable to sum values
+        let result = 0;
+    //     if root.val(or the current node) is greater than or equal to low or less than or equal to High, add the value of the current node to result;
+        
+        if (root.val >= low && root.val <= high) {
+            result += root.val;
+        }
+    //     if a node to the left exists, run rangeSumBST(with the left node as an argument) and add functions return vale to result; 
+       if (root.left) {
+           result += rangeSumBST(root.left, low, high)
+       }
+        //     if a node to the right exists, run rangeSumBST(with the right node as an argument) and add functions return vale to result;
+       if (root.right) {
+             result += rangeSumBST(root.right, low, high)
+       } 
+    
+    //     return result;
+        return result;
+    
+    };
+
+
 
