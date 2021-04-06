@@ -649,3 +649,29 @@ var kidsWithCandies = function(candies, extraCandies) {
                                         }
                                         return count;
                                     };
+
+
+                                    let counter = 0;
+                                    let resultString = "";
+                                    
+                                    for(let i = 0; i<S.length;i++){        
+                                        if (S.charAt(i) === ")"){
+                                            if (counter == 1) {
+                                                resultString += "";
+                                            } else {
+                                                resultString += S.charAt(i);
+                                            }
+                                            counter = counter - 1;
+                                        }
+                                        
+                                        if(S.charAt(i) === "("){
+                                            if(counter == 0) {
+                                                resultString += "";
+                                            } else {
+                                                resultString += S.charAt(i);
+                                            }
+                                            counter = counter + 1;
+                                        }
+                                    }
+                                    
+                                    return resultString;   
