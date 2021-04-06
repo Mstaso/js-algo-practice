@@ -636,3 +636,16 @@ var kidsWithCandies = function(candies, extraCandies) {
                                        return counter;
                                     }
                                 
+
+                                    var minTimeToVisitAllPoints = function(arr) {
+                                        let count = 0;
+                                        for(let i = 0; i < arr.length-1; i++){
+                                            // how many moves it takes to move x axis to the right spot 
+                                            let diff1 = Math.abs(arr[i][0] - arr[i+1][0]);
+                                            // how many moves it takes to move y axis to the right spot
+                                            let diff2 = Math.abs(arr[i][1] - arr[i+1][1]);
+                                            // add the longest between x-moves and y-moves because you know that the lesser moves one doesn't matter
+                                            count+= Math.max(diff1, diff2);
+                                        }
+                                        return count;
+                                    };
