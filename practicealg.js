@@ -654,4 +654,53 @@ var kidsWithCandies = function(candies, extraCandies) {
                                         return s.split(' ').slice(0, k).join(' ');
                                       };            
 
+function numberCheck(array) {
+// pass str 1 and str 2 into bcharmap and save them to variables
+let sum = 0;
+let charMap1 = bCharMap(array);
+console.log(charMap1)
+// iterate thru one of the charmaps, doesnt matter which one,
+for(let key in charMap1) {
+  if(charMap1[key] === 1) {
+    sum += parseInt(key);
+  }
+}
+// if charMap1[char] not equal to charmap2[char], return false
+console.log(sum);
+};                                      
+
+function bCharMap(str) {
+// create empty object to store keys and values
+let charMap = {};
+// for loop over str
+for(let char of str) {
+    if (!charMap[char]) {
+        charMap[char] = 1;
+    } else {
+        charMap[char] ++;
+    }
+};
+// if !charmap[char] set equal to one
+// else increment by 1
+
+return charMap
+// return charMap
+};
+
+numberCheck([1, 2, 2, 3, 3, 4, 5]);
+
+var findNumbers = function(nums) {
+    //    create counter variable
+        let counter = 0;
+    //     loops through nums
+        for (let num of nums) {
+         if (num.toString().length % 2 === 0) {
+             counter ++;
+         }
+        };
+    //     turn to string and call .length, if uneven add to variable
+        
+    //     return counter
+        return counter;
+    };
                                     
