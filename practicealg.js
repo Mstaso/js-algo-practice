@@ -780,5 +780,16 @@ var oddCells = function(m, n, indices) {
     //     return counter
         return counter;
 };
+
+var flipAndInvertImage = function(image) {
     
+    for(let row of image) {
+       row.reverse();
+        for(let i = 0; i < row.length; i++) {
+        row[i] === 1 ? row[i] = 0 : row[i] = 1
+        }
+    }
+
+    return image;
+};    
                                     
