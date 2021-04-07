@@ -703,4 +703,82 @@ var findNumbers = function(nums) {
     //     return counter
         return counter;
     };
+
+var oddCells = function(m, n, indices) {
+// create matrix
+    let matrix = Array.from({ length: m }, () => Array.from({ length: n}, () => 0));
+             
+//     for loop thru indices
+    for(let i = 0; i < indices.length; i++) {
+//     create row variable
+        let row = matrix[indices[i][0]];
+
+//         use for loop to increment each element in row
+       for(let j = 0; j < row.length; j++) {
+        row[j] ++
+           
+        };
+        
+//         use for loop to to increment each element in column
+         for(let k = 0; k < matrix.length; k++) {
+               let findColumn = matrix[k];
+               findColumn[indices[i][1]] ++;
+           };
+
+    };
+    
+//     create counter variable
+let counter = 0;
+    
+//     iterate through matrix and iterate through each array in the matrix, and if any elements are odd, increment counter
+    matrix.forEach((array) => {
+        for(let element of array) {
+            if (element % 2 !== 0) {
+                counter ++;
+            }
+        };
+    })
+
+//     return counter
+    return counter;
+};
+var oddCells = function(m, n, indices) {
+    // create matrix
+        let matrix = Array.from({ length: m }, () => Array.from({ length: n}, () => 0));
+                 
+    //     for loop thru indices
+        for(let i = 0; i < indices.length; i++) {
+    //     create row variable
+            let row = matrix[indices[i][0]];
+    
+    //         use for loop to increment each element in row
+           for(let j = 0; j < row.length; j++) {
+            row[j] ++
+               
+            };
+            
+    //         use for loop to to increment each element in column
+             for(let k = 0; k < matrix.length; k++) {
+                   let findColumn = matrix[k];
+                   findColumn[indices[i][1]] ++;
+               };
+    
+        };
+        
+    //     create counter variable
+    let counter = 0;
+        
+    //     iterate through matrix and iterate through each array in the matrix, and if any elements are odd, increment counter
+        matrix.forEach((array) => {
+            for(let element of array) {
+                if (element % 2 !== 0) {
+                    counter ++;
+                }
+            };
+        })
+    
+    //     return counter
+        return counter;
+};
+    
                                     
