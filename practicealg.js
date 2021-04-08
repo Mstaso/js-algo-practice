@@ -846,4 +846,31 @@ var maximum69Number  = function(num) {
         
         return string;
     };    
+    var diagonalSum = function(mat) {
+        //     create sum variable
+            let sum = 0;
+            let counter = mat.length - 1;
+            
+        //     create counter variable equal to mat.length - 1
+            
+            for(let i = 0; i < mat.length; i++) {
+              if (i === counter)  {
+                  sum += mat[i][i];
+              }  else {
+                  sum += mat[i][i];
+                  sum += mat[i][counter]
+              }
+                
+                counter --;
+            };
+        //     for loop over matrix
+        //     if( i == j )
+        //         add matrix[i][i] to sum else
+        //     else
+        //     add maxtrix[i][i] and matrix[i][j]
+        //          decrement i
+                
+        //         return sum
+            return sum;
+        };    
                                     
