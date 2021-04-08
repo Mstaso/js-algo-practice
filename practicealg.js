@@ -827,4 +827,23 @@ var maximum69Number  = function(num) {
         
         return newNum.join('')
     };
+    var freqAlphabets = function(s) {
+        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        
+        let string = '';
+        for(let i = 0; i < s.length; i++) {
+            if(s[i + 2] === '#') {
+                let index = parseInt(s[i] += s[i+1]);
+                string += alphabet[index - 1];
+            };
+            
+           if(s[i] !== '#' &&  s[i + 1] !== '#' && s[i + 2] !== '#') {
+               let index = parseInt(s[i]);
+               string += alphabet[index - 1];
+           }
+            
+        };
+        
+        return string;
+    };    
                                     
