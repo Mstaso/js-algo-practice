@@ -809,4 +809,22 @@ var countGoodRectangles = function(rectangles) {
     
     return count
 };   
+var maximum69Number  = function(num) {
+    // create maxVariable 
+        let maxNum = 0;
+    //     turn num to a string so we can iterate
+            let newNum = num.toString().split('');
+        
+            
+    //     iterate thru num and turn it into a string
+        for(let i = 0; i <= newNum.length; i++) {
+            if (newNum[i] == 6) {
+                newNum[i] = 9;
+                break;
+            };
+        
+        };
+        
+        return newNum.join('')
+    };
                                     
